@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>فروش دامنه | DOMAIN.ir</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- تگ canonical برای SEO -->
+    <link rel="canonical" href="https://main-domain.ir" />
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        * { 
+            margin: 0; 
+            padding: 0; 
+            box-sizing: border-box; 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        }
         
         body {
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -22,9 +29,15 @@
             border-radius: 20px;
             padding: 40px;
             box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 600px;
+            max-width: 700px;
             width: 100%;
             text-align: center;
+            animation: fadeIn 1s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
         
         .domain-name {
@@ -32,6 +45,7 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
             direction: ltr;
+            text-align: center;
         }
         
         .badge {
@@ -41,14 +55,35 @@
             padding: 8px 20px;
             border-radius: 30px;
             font-size: 1rem;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .current-domain-box {
+            background: #e3f2fd;
+            border-radius: 10px;
+            padding: 15px;
+            margin: 15px 0;
+            border: 2px dashed #2196F3;
+        }
+        
+        .current-domain-box p {
+            color: #0d47a1;
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        
+        #domain-display {
+            color: #d32f2f;
+            font-family: monospace;
+            font-size: 1.2rem;
         }
         
         .contact-box {
             background: #f8f9fa;
             border-radius: 15px;
             padding: 30px;
-            margin: 30px 0;
+            margin: 25px 0;
             border-left: 5px solid #667eea;
         }
         
@@ -58,6 +93,7 @@
             direction: ltr;
             margin: 20px 0;
             font-weight: bold;
+            letter-spacing: 2px;
         }
         
         .btn {
@@ -68,40 +104,78 @@
             border-radius: 50px;
             text-decoration: none;
             font-size: 1.2rem;
+            font-weight: bold;
             margin: 10px;
-            transition: 0.3s;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
         }
         
         .btn:hover {
             background: #45a049;
             transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+        
+        .btn-call {
+            background: #2196F3;
+        }
+        
+        .btn-call:hover {
+            background: #0b7dda;
+        }
+        
+        .stats {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f8e9;
+            border-radius: 10px;
+        }
+        
+        .stats h3 {
+            color: #33691e;
+            margin-bottom: 10px;
         }
         
         @media (max-width: 768px) {
             .domain-name { font-size: 1.8rem; }
             .phone-number { font-size: 1.8rem; }
             .container { padding: 20px; }
+            .btn { padding: 12px 25px; font-size: 1rem; }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1 class="domain-name" id="domainDisplay">DOMAIN.ir</h1>
+        <!-- نمایش خودکار نام دامنه -->
+        <h1 class="domain-name" id="domain-title">DOMAIN.ir</h1>
         <div class="badge">این دامنه برای فروش است</div>
         
+        <!-- نمایش دامنه فعلی -->
+        <div class="current-domain-box">
+            <p>شما در حال مشاهده دامنه زیر هستید:</p>
+            <p id="domain-display">در حال بارگذاری...</p>
+        </div>
+        
         <div class="contact-box">
-            <h2><i class="fas fa-phone-alt"></i> برای خرید از طریق واتس آپ پیام بدهید</h2>
-            <div class="phone-number" id="phoneDisplay">09188533133</div>
+            <h2><i class="fas fa-phone-alt"></i> برای خرید تماس بگیرید</h2>
+            <div class="phone-number" id="phone-display">۰۹۱۲ XXX XXXX</div>
             <p>⏰ پاسخگویی: همه روزه ۹ صبح تا ۹ شب</p>
         </div>
         
         <div>
-            <a href="tel:+98912XXXXXXX" class="btn">
+            <a href="tel:+98912XXXXXXX" class="btn btn-call">
                 <i class="fas fa-phone"></i> تماس مستقیم
             </a>
-            <a href="mhrasoulitabar@gmail.com" class="btn" style="background:#2196F3;">
+            <a href="mailto:your-email@gmail.com" class="btn">
                 <i class="fas fa-envelope"></i> ارسال ایمیل
             </a>
+        </div>
+        
+        <!-- بخش آمار و اطلاعات -->
+        <div class="stats">
+            <h3><i class="fas fa-chart-line"></i> اطلاعات دامنه</h3>
+            <p id="domain-info">در حال دریافت اطلاعات...</p>
         </div>
         
         <p style="margin-top:30px; color:#666; font-size:0.9rem;">
@@ -110,19 +184,108 @@
     </div>
 
     <script>
-        // نمایش خودکار نام دامنه
-        const currentDomain = window.location.hostname;
-        document.getElementById('domainDisplay').textContent = currentDomain;
+        // ========== تنظیمات اصلی ==========
+        // شماره تلفن شما - اینجا تغییر بدید
+        const yourPhone = "۰۹۱۲۳۴۵۶۷۸۹"; // شماره به فارسی
+        const cleanPhone = "989123456789"; // شماره با کد کشور
         
-        // شماره تلفن شما - اینجا رو تغییر بده
-        const yourPhone = "09188533133"; // شمارت رو اینجا بزن
-        const cleanPhone = "989188533133"; // بدون صفر اول
+        // ایمیل شما
+        const yourEmail = "your-email@gmail.com";
         
-        document.getElementById('phoneDisplay').textContent = yourPhone;
-        document.querySelector('a[href^="tel:"]').href = "tel:+" + cleanPhone;
+        // دامنه اصلی برای canonical tag
+        const mainDomain = "main-domain.ir";
         
-        // تغییر عنوان صفحه
-        document.title = "فروش دامنه | " + currentDomain;
+        // ========== اجرای کد پس از لود صفحه ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. گرفتن نام دامنه فعلی
+            const currentDomain = window.location.hostname;
+            
+            // 2. نمایش نام دامنه در جاهای مختلف
+            document.getElementById('domain-title').textContent = currentDomain;
+            document.getElementById('domain-display').textContent = currentDomain;
+            document.title = "فروش دامنه | " + currentDomain;
+            
+            // 3. تنظیم شماره تلفن
+            document.getElementById('phone-display').textContent = yourPhone;
+            document.querySelector('a[href^="tel:"]').href = "tel:+" + cleanPhone;
+            
+            // 4. تنظیم ایمیل
+            document.querySelector('a[href^="mailto:"]').href = "mailto:" + yourEmail;
+            
+            // 5. نمایش اطلاعات دامنه
+            const domainInfo = document.getElementById('domain-info');
+            domainInfo.innerHTML = `
+                <strong>دامنه فعلی:</strong> ${currentDomain} <br>
+                <strong>تاریخ مشاهده:</strong> ${new Date().toLocaleDateString('fa-IR')} <br>
+                <strong>ساعت:</strong> ${new Date().toLocaleTimeString('fa-IR')}
+            `;
+            
+            // 6. اگر دامنه خاصی بود، محتوای خاص نشان بده
+            showCustomContent(currentDomain);
+            
+            // 7. ثبت بازدید در console (برای بررسی)
+            console.log('📊 بازدید از دامنه:', currentDomain);
+            console.log('🕒 زمان:', new Date().toLocaleString('fa-IR'));
+            
+            // 8. تغییر canonical tag بر اساس دامنه اصلی
+            document.querySelector('link[rel="canonical"]').href = "https://" + mainDomain;
+        });
+        
+        // ========== تابع نمایش محتوای خاص بر اساس دامنه ==========
+        function showCustomContent(domain) {
+            const container = document.querySelector('.container');
+            
+            // مثال: اگر دامنه شامل کلمه خاصی بود
+            if (domain.includes('car') || domain.includes('ماشین')) {
+                container.innerHTML += `
+                    <div style="background:#fff3cd; padding:15px; border-radius:10px; margin-top:20px;">
+                        <h3 style="color:#856404;">🚗 این دامنه مناسب کسب‌وکارهای خودرویی است</h3>
+                        <p>برای قیمت‌گذاری ویژه دامنه‌های مرتبط با خودرو تماس بگیرید.</p>
+                    </div>
+                `;
+            }
+            else if (domain.includes('tech') || domain.includes('تکنولوژی')) {
+                container.innerHTML += `
+                    <div style="background:#d1ecf1; padding:15px; border-radius:10px; margin-top:20px;">
+                        <h3 style="color:#0c5460;">💻 این دامنه مناسب استارت‌آپ‌های فناوری است</h3>
+                        <p>پیشنهاد ویژه برای شرکت‌های دانش‌بنیان.</p>
+                    </div>
+                `;
+            }
+            else if (domain.includes('shop') || domain.includes('فروشگاه')) {
+                container.innerHTML += `
+                    <div style="background:#d4edda; padding:15px; border-radius:10px; margin-top:20px;">
+                        <h3 style="color:#155724;">🛒 این دامنه ایده‌آل برای فروشگاه آنلاین است</h3>
+                        <p>دارای قابلیت SEO عالی برای تجارت الکترونیک.</p>
+                    </div>
+                `;
+            }
+        }
+        
+        // ========== ثبت آمار بازدید (ساده) ==========
+        window.onload = function() {
+            // می‌توانید این اطلاعات را به سرور ارسال کنید
+            const visitData = {
+                domain: window.location.hostname,
+                timestamp: new Date().toISOString(),
+                userAgent: navigator.userAgent
+            };
+            
+            // فقط برای نمایش در کنسول
+            console.log('📈 آمار بازدید:', visitData);
+        };
     </script>
+    
+    <!-- Google Analytics (اختیاری) -->
+    <!--
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    -->
 </body>
 </html>
