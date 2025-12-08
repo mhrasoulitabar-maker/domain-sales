@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>فروش دامنه | DOMAIN.ir</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        
+        body {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 600px;
+            width: 100%;
+            text-align: center;
+        }
+        
+        .domain-name {
+            color: #333;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            direction: ltr;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 1rem;
+            margin-bottom: 30px;
+        }
+        
+        .contact-box {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            border-left: 5px solid #667eea;
+        }
+        
+        .phone-number {
+            font-size: 2.2rem;
+            color: #d35400;
+            direction: ltr;
+            margin: 20px 0;
+            font-weight: bold;
+        }
+        
+        .btn {
+            display: inline-block;
+            background: #4CAF50;
+            color: white;
+            padding: 15px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            margin: 10px;
+            transition: 0.3s;
+        }
+        
+        .btn:hover {
+            background: #45a049;
+            transform: translateY(-3px);
+        }
+        
+        @media (max-width: 768px) {
+            .domain-name { font-size: 1.8rem; }
+            .phone-number { font-size: 1.8rem; }
+            .container { padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="domain-name" id="domainDisplay">DOMAIN.ir</h1>
+        <div class="badge">این دامنه برای فروش است</div>
+        
+        <div class="contact-box">
+            <h2><i class="fas fa-phone-alt"></i> برای خرید از طریق واتس آپ پیام بدهید</h2>
+            <div class="phone-number" id="phoneDisplay">09188533133</div>
+            <p>⏰ پاسخگویی: همه روزه ۹ صبح تا ۹ شب</p>
+        </div>
+        
+        <div>
+            <a href="tel:+98912XXXXXXX" class="btn">
+                <i class="fas fa-phone"></i> تماس مستقیم
+            </a>
+            <a href="mhrasoulitabar@gmail.com" class="btn" style="background:#2196F3;">
+                <i class="fas fa-envelope"></i> ارسال ایمیل
+            </a>
+        </div>
+        
+        <p style="margin-top:30px; color:#666; font-size:0.9rem;">
+            <i class="fas fa-info-circle"></i> لطفاً هنگام تماس، نام دامنه را ذکر کنید
+        </p>
+    </div>
+
+    <script>
+        // نمایش خودکار نام دامنه
+        const currentDomain = window.location.hostname;
+        document.getElementById('domainDisplay').textContent = currentDomain;
+        
+        // شماره تلفن شما - اینجا رو تغییر بده
+        const yourPhone = "09188533133"; // شمارت رو اینجا بزن
+        const cleanPhone = "989188533133"; // بدون صفر اول
+        
+        document.getElementById('phoneDisplay').textContent = yourPhone;
+        document.querySelector('a[href^="tel:"]').href = "tel:+" + cleanPhone;
+        
+        // تغییر عنوان صفحه
+        document.title = "فروش دامنه | " + currentDomain;
+    </script>
+</body>
+</html>
