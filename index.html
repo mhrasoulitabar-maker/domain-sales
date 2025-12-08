@@ -1,291 +1,470 @@
 <!DOCTYPE html>
-<html lang="fa">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>فروش دامنه | DOMAIN.ir</title>
+    <title>فروش دامنه | خرید دامنه اختصاصی</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <!-- تگ canonical برای SEO -->
-    <link rel="canonical" href="https://main-domain.ir" />
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        * { 
-            margin: 0; 
-            padding: 0; 
-            box-sizing: border-box; 
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         body {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Vazirmatn', sans-serif;
+            background: linear-gradient(135deg, 
+                rgba(41, 128, 185, 0.9) 0%, 
+                rgba(52, 152, 219, 0.85) 25%, 
+                rgba(155, 89, 182, 0.8) 50%, 
+                rgba(231, 76, 60, 0.85) 75%, 
+                rgba(230, 126, 34, 0.9) 100%),
+                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             min-height: 100vh;
             display: flex;
             justify-content: center;
             align-items: center;
             padding: 20px;
+            position: relative;
+            overflow-x: hidden;
+        }
+        
+        body::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
         }
         
         .container {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            max-width: 700px;
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 25px;
+            padding: 60px 50px;
+            max-width: 750px;
             width: 100%;
             text-align: center;
-            animation: fadeIn 1s ease;
+            box-shadow: 
+                0 25px 50px rgba(0, 0, 0, 0.25),
+                0 0 0 1px rgba(255, 255, 255, 0.1),
+                inset 0 0 50px rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            position: relative;
+            overflow: hidden;
         }
         
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+        .container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, 
+                transparent 30%, 
+                rgba(255, 255, 255, 0.1) 50%, 
+                transparent 70%);
+            animation: shine 8s infinite linear;
         }
         
-        .domain-name {
-            color: #333;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            direction: ltr;
-            text-align: center;
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(360deg); }
         }
         
-        .badge {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-size: 1rem;
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 40px;
+            font-size: 42px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 25%;
+            width: 50%;
+            height: 4px;
+            background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
+            border-radius: 2px;
+        }
+        
+        .icon-header {
+            font-size: 48px;
             margin-bottom: 20px;
-            font-weight: bold;
+            background: linear-gradient(135deg, #3498db, #9b59b6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: float 3s ease-in-out infinite;
         }
         
-        .current-domain-box {
-            background: #e3f2fd;
-            border-radius: 10px;
-            padding: 15px;
-            margin: 15px 0;
-            border: 2px dashed #2196F3;
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
         }
         
-        .current-domain-box p {
-            color: #0d47a1;
-            font-weight: bold;
-            font-size: 1.1rem;
+        .contact-card {
+            background: linear-gradient(135deg, #ffffff, #f8f9fa);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            box-shadow: 
+                0 15px 35px rgba(0, 0, 0, 0.1),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            transition: transform 0.3s ease;
         }
         
-        #domain-display {
-            color: #d32f2f;
-            font-family: monospace;
-            font-size: 1.2rem;
+        .contact-card:hover {
+            transform: translateY(-5px);
         }
         
-        .contact-box {
-            background: #f8f9fa;
-            border-radius: 15px;
-            padding: 30px;
-            margin: 25px 0;
-            border-left: 5px solid #667eea;
+        .contact-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: #3498db;
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
         
         .phone-number {
-            font-size: 2.2rem;
-            color: #d35400;
+            font-size: 48px;
+            color: #e74c3c;
+            margin: 25px 0;
             direction: ltr;
-            margin: 20px 0;
-            font-weight: bold;
+            font-weight: 700;
             letter-spacing: 2px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .email-address {
+            font-size: 28px;
+            color: #2980b9;
+            margin: 20px 0;
+            direction: ltr;
+            font-weight: 600;
+            background: linear-gradient(135deg, #2980b9, #1c5a7a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .info-text {
+            color: #7f8c8d;
+            font-size: 18px;
+            margin: 15px 0;
+            line-height: 1.6;
+        }
+        
+        .highlight-box {
+            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
+            border-radius: 15px;
+            padding: 25px;
+            margin: 30px 0;
+            border: 2px solid #fdcb6e;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .highlight-box::before {
+            content: '💡';
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 24px;
+        }
+        
+        .highlight-text {
+            color: #856404;
+            font-size: 18px;
+            font-weight: 600;
+        }
+        
+        .action-buttons {
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
         }
         
         .btn {
-            display: inline-block;
-            background: #4CAF50;
-            color: white;
-            padding: 15px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px 45px;
             border-radius: 50px;
             text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            margin: 10px;
+            font-size: 20px;
+            font-weight: 600;
             transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
+            min-width: 220px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
         }
         
-        .btn:hover {
-            background: #45a049;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn-call {
-            background: #2196F3;
+            background: linear-gradient(135deg, #e74c3c, #c0392b);
+            color: white;
         }
         
-        .btn-call:hover {
-            background: #0b7dda;
+        .btn-email {
+            background: linear-gradient(135deg, #3498db, #2980b9);
+            color: white;
         }
         
-        .stats {
-            margin-top: 30px;
-            padding: 20px;
-            background: #f1f8e9;
-            border-radius: 10px;
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
         }
         
-        .stats h3 {
-            color: #33691e;
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .feature {
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 15px;
+            padding: 25px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature:hover {
+            background: rgba(52, 152, 219, 0.2);
+            transform: translateY(-5px);
+        }
+        
+        .feature i {
+            font-size: 36px;
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
             margin-bottom: 10px;
+            font-size: 18px;
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+            font-size: 14px;
+        }
+        
+        .footer-note {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid #ecf0f1;
+            color: #7f8c8d;
+            font-size: 16px;
         }
         
         @media (max-width: 768px) {
-            .domain-name { font-size: 1.8rem; }
-            .phone-number { font-size: 1.8rem; }
-            .container { padding: 20px; }
-            .btn { padding: 12px 25px; font-size: 1rem; }
+            .container {
+                padding: 40px 25px;
+                margin: 20px;
+            }
+            
+            h1 {
+                font-size: 32px;
+            }
+            
+            .phone-number {
+                font-size: 36px;
+            }
+            
+            .email-address {
+                font-size: 22px;
+            }
+            
+            .btn {
+                padding: 18px 35px;
+                min-width: 100%;
+                margin: 10px 0;
+            }
+            
+            .action-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .container {
+                padding: 30px 20px;
+            }
+            
+            h1 {
+                font-size: 28px;
+            }
+            
+            .phone-number {
+                font-size: 28px;
+            }
+            
+            .email-address {
+                font-size: 18px;
+            }
+            
+            .contact-card {
+                padding: 25px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- نمایش خودکار نام دامنه -->
-        <h1 class="domain-name" id="domain-title">DOMAIN.ir</h1>
-        <div class="badge">این دامنه برای فروش است</div>
-        
-        <!-- نمایش دامنه فعلی -->
-        <div class="current-domain-box">
-            <p>شما در حال مشاهده دامنه زیر هستید:</p>
-            <p id="domain-display">در حال بارگذاری...</p>
+        <div class="icon-header">
+            <i class="fas fa-globe"></i>
         </div>
         
-        <div class="contact-box">
-            <h2><i class="fas fa-phone-alt"></i> برای خرید تماس بگیرید</h2>
-            <div class="phone-number" id="phone-display">۰۹۱۲ XXX XXXX</div>
-            <p>⏰ پاسخگویی: همه روزه ۹ صبح تا ۹ شب</p>
+        <h1>🌐 این دامنه برای فروش است</h1>
+        
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-phone-alt"></i>
+            </div>
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">برای خرید تماس بگیرید</h2>
+            <div class="phone-number">۰۹۱۲۳۴۵۶۷۸۹</div>
+            <p class="info-text">⏰ پاسخگویی: همه روزه از ۹ صبح تا ۹ شب</p>
+            <p class="info-text">📅 حتی در ایام تعطیل</p>
         </div>
         
-        <div>
-            <a href="tel:+98912XXXXXXX" class="btn btn-call">
-                <i class="fas fa-phone"></i> تماس مستقیم
+        <div class="contact-card">
+            <div class="contact-icon">
+                <i class="fas fa-envelope"></i>
+            </div>
+            <h2 style="color: #2c3e50; margin-bottom: 20px;">ارسال ایمیل</h2>
+            <div class="email-address">example@gmail.com</div>
+            <p class="info-text">✉️ در کمتر از ۲۴ ساعت پاسخ می‌دهیم</p>
+            <p class="info-text">📎 امکان ارسال پیشنهاد قیمت از طریق ایمیل</p>
+        </div>
+        
+        <div class="highlight-box">
+            <p class="highlight-text">
+                💡 نکته مهم: لطفاً هنگام تماس یا ارسال ایمیل، نام دامنه مورد نظر را ذکر کنید.
+            </p>
+        </div>
+        
+        <div class="action-buttons">
+            <a href="tel:+989123456789" class="btn btn-call">
+                <i class="fas fa-phone"></i>
+                تماس مستقیم
             </a>
-            <a href="mailto:your-email@gmail.com" class="btn">
-                <i class="fas fa-envelope"></i> ارسال ایمیل
+            <a href="mailto:example@gmail.com" class="btn btn-email">
+                <i class="fas fa-envelope"></i>
+                ارسال ایمیل
             </a>
         </div>
         
-        <!-- بخش آمار و اطلاعات -->
-        <div class="stats">
-            <h3><i class="fas fa-chart-line"></i> اطلاعات دامنه</h3>
-            <p id="domain-info">در حال دریافت اطلاعات...</p>
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shield-alt"></i>
+                <h3>ثبت قانونی</h3>
+                <p>دامنه به صورت قانونی ثبت شده</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-bolt"></i>
+                <h3>انتقال سریع</h3>
+                <p>انتقال در کمتر از ۲۴ ساعت</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>امنیت بالا</h3>
+                <p>حفظ کامل حریم خصوصی</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-headset"></i>
+                <h3>پشتیبانی</h3>
+                <p>پشتیبانی کامل پس از خرید</p>
+            </div>
         </div>
         
-        <p style="margin-top:30px; color:#666; font-size:0.9rem;">
-            <i class="fas fa-info-circle"></i> لطفاً هنگام تماس، نام دامنه را ذکر کنید
-        </p>
+        <div class="footer-note">
+            <p>🔒 این دامنه به صورت قانونی ثبت شده و آماده انتقال به نام خریدار است.</p>
+            <p>💰 قیمت: پس از تماس یا ارسال ایمیل اعلام خواهد شد.</p>
+            <p>⚡ انتقال سریع: پس از توافق، در کوتاه‌ترین زمان انجام می‌شود.</p>
+        </div>
     </div>
-
-    <script>
-        // ========== تنظیمات اصلی ==========
-        // شماره تلفن شما - اینجا تغییر بدید
-        const yourPhone = "۰۹۱۲۳۴۵۶۷۸۹"; // شماره به فارسی
-        const cleanPhone = "989123456789"; // شماره با کد کشور
-        
-        // ایمیل شما
-        const yourEmail = "your-email@gmail.com";
-        
-        // دامنه اصلی برای canonical tag
-        const mainDomain = "main-domain.ir";
-        
-        // ========== اجرای کد پس از لود صفحه ==========
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // 1. گرفتن نام دامنه فعلی
-            const currentDomain = window.location.hostname;
-            
-            // 2. نمایش نام دامنه در جاهای مختلف
-            document.getElementById('domain-title').textContent = currentDomain;
-            document.getElementById('domain-display').textContent = currentDomain;
-            document.title = "فروش دامنه | " + currentDomain;
-            
-            // 3. تنظیم شماره تلفن
-            document.getElementById('phone-display').textContent = 09188533133;
-            document.querySelector('a[href^="tel:"]').href = "tel:+" + 989188533133;
-            
-            // 4. تنظیم ایمیل
-            document.querySelector('a[href^="mailto:"]').href = "mailto:" mhrasoulitabar@gmail.com;
-            
-            // 5. نمایش اطلاعات دامنه
-            const domainInfo = document.getElementById('buildcenter.ir');
-            domainInfo.innerHTML = `
-                <strong>دامنه فعلی:</strong> ${currentDomain} <br>
-                <strong>تاریخ مشاهده:</strong> ${new Date().toLocaleDateString('fa-IR')} <br>
-                <strong>ساعت:</strong> ${new Date().toLocaleTimeString('fa-IR')}
-            `;
-            
-            // 6. اگر دامنه خاصی بود، محتوای خاص نشان بده
-            showCustomContent(currentDomain);
-            
-            // 7. ثبت بازدید در console (برای بررسی)
-            console.log('📊 بازدید از دامنه:', currentDomain);
-            console.log('🕒 زمان:', new Date().toLocaleString('fa-IR'));
-            
-            // 8. تغییر canonical tag بر اساس دامنه اصلی
-            document.querySelector('link[rel="canonical"]').href = "https://" + mainDomain;
-        });
-        
-        // ========== تابع نمایش محتوای خاص بر اساس دامنه ==========
-        function showCustomContent(domain) {
-            const container = document.querySelector('.container');
-            
-            // مثال: اگر دامنه شامل کلمه خاصی بود
-            if (domain.includes('car') || domain.includes('ماشین')) {
-                container.innerHTML += `
-                    <div style="background:#fff3cd; padding:15px; border-radius:10px; margin-top:20px;">
-                        <h3 style="color:#856404;">🚗 این دامنه مناسب کسب‌وکارهای خودرویی است</h3>
-                        <p>برای قیمت‌گذاری ویژه دامنه‌های مرتبط با خودرو تماس بگیرید.</p>
-                    </div>
-                `;
-            }
-            else if (domain.includes('tech') || domain.includes('تکنولوژی')) {
-                container.innerHTML += `
-                    <div style="background:#d1ecf1; padding:15px; border-radius:10px; margin-top:20px;">
-                        <h3 style="color:#0c5460;">💻 این دامنه مناسب استارت‌آپ‌های فناوری است</h3>
-                        <p>پیشنهاد ویژه برای شرکت‌های دانش‌بنیان.</p>
-                    </div>
-                `;
-            }
-            else if (domain.includes('shop') || domain.includes('فروشگاه')) {
-                container.innerHTML += `
-                    <div style="background:#d4edda; padding:15px; border-radius:10px; margin-top:20px;">
-                        <h3 style="color:#155724;">🛒 این دامنه ایده‌آل برای فروشگاه آنلاین است</h3>
-                        <p>دارای قابلیت SEO عالی برای تجارت الکترونیک.</p>
-                    </div>
-                `;
-            }
-        }
-        
-        // ========== ثبت آمار بازدید (ساده) ==========
-        window.onload = function() {
-            // می‌توانید این اطلاعات را به سرور ارسال کنید
-            const visitData = {
-                domain: window.location.hostname,
-                timestamp: new Date().toISOString(),
-                userAgent: navigator.userAgent
-            };
-            
-            // فقط برای نمایش در کنسول
-            console.log('📈 آمار بازدید:', visitData);
-        };
-    </script>
     
-    <!-- Google Analytics (اختیاری) -->
-    <!--
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-XXXXXXXXXX');
+        // اضافه کردن انیمیشن‌های جزئی
+        document.addEventListener('DOMContentLoaded', function() {
+            // تغییر شماره و ایمیل - اینجا اطلاعات خودت را وارد کن
+            const phoneElement = document.querySelector('.phone-number');
+            const emailElement = document.querySelector('.email-address');
+            const callBtn = document.querySelector('.btn-call');
+            const emailBtn = document.querySelector('.btn-email');
+            
+            // شماره و ایمیل شما - تغییر دهید
+            const yourPhone = "09188533133";
+            const yourEmail = "mehrdad.r6060@gmail.com";
+            const cleanPhone = "989188533133"; // بدون صفر اول
+            
+            // اعمال تغییرات
+            phoneElement.textContent = yourPhone;
+            emailElement.textContent = yourEmail;
+            callBtn.href = "tel:+" + cleanPhone;
+            emailBtn.href = "mailto:" + yourEmail;
+            
+            // افکت hover برای کارت‌ها
+            const cards = document.querySelectorAll('.contact-card');
+            cards.forEach(card => {
+                card.addEventListener('mouseenter', () => {
+                    card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
+                });
+                card.addEventListener('mouseleave', () => {
+                    card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
+                });
+            });
+        });
     </script>
-    -->
 </body>
 </html>
