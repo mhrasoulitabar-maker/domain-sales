@@ -403,37 +403,44 @@
             });
         });
     </script>   
-   <script>
-    const domain = window.location.hostname;
+    <!-- اینجا آخر صفحه است -->
+    
+    <span id="domainText" 
+          style="display:block; text-align:center; margin-top:30px; 
+                 font-size:22px; font-weight:bold; color:#2c3e50;">
+    </span>
 
-    const domains = {
-        "domain1.com": "www.buildingland.ir",
-        "domain2.com": "www.barbardigital.ir",
-        "domain3.com": "www.buildcenter.ir",
-        "domain4.com": "www.civaro.ir",
-       "domain5.com": "www.civildesign.ir",
-        "domain6.com": "www.constructionlab.ir",
-        "domain7.com": "www.contentcity.ir",
-        "domain8.com": "www.edulab.ir",
-        "domain9.com": "www.homeengineer.ir",
-        "domain10.com": "www.jobpool.ir",
-        "domain11.com": "www.modernarchitecture.ir",
-        "domain4.com": "www.modernbuilding.ir",
-        "domain4.com": "www.outfitbox.ir",
-        "domain4.com": "www.podcastcenter.ir",
-        "domain4.com": "www.proengineering.ir",
-        "domain4.com": "www.smartarchitecture.ir",
-        "domain4.com": "www.smartstructure.ir",
-        "domain4.com": "www.sweetlab.ir",
-        "domain4.com": "www.techbuilding.ir",
-        "domain4.com": "www.travelzone.ir",
-        "domain4.com": "www.valasaz.ir",
+    <script>
+        const domain = window.location.hostname;
 
-    const text = domains[domain] || "دامنه ناشناخته";
+        const domains = {
+            "buildingland.ir": "www.buildingland.ir",
+            "barbardigital.ir": "www.barbardigital.ir",
+            "buildcenter.ir": "www.buildcenter.ir",
+            "civaro.ir": "www.civaro.ir",
+            "civildesign.ir": "www.civildesign.ir",
+            "constructionlab.ir": "www.constructionlab.ir",
+            "contentcity.ir": "www.contentcity.ir",
+            "edulab.ir": "www.edulab.ir",
+            "homeengineer.ir": "www.homeengineer.ir",
+            "jobpool.ir": "www.jobpool.ir",
+            "modernarchitecture.ir": "www.modernarchitecture.ir",
+            "modernbuilding.ir": "www.modernbuilding.ir",
+            "outfitbox.ir": "www.outfitbox.ir",
+            "podcastcenter.ir": "www.podcastcenter.ir",
+            "proengineering.ir": "www.proengineering.ir",
+            "smartarchitecture.ir": "www.smartarchitecture.ir",
+            "smartstructure.ir": "www.smartstructure.ir",
+            "sweetlab.ir": "www.sweetlab.ir",
+            "techbuilding.ir": "www.techbuilding.ir",
+            "travelzone.ir": "www.travelzone.ir",
+            "valasaz.ir": "www.valasaz.ir"
+        };
 
-    document.getElementById("domainText").innerText = text;
-</script>
-
-</body>      
+        const text = domains[domain] || domain;
+        document.getElementById("domainText").innerText = "نام دامنه: " + text;
+    </script>
         <span id="domainText"></span>
+
+</body>
 </html>
