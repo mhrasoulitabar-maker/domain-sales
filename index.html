@@ -190,7 +190,7 @@
 
     </div>
 
-<!-- اسکریپت اصلی شما -->
+<!-- اسکریپت اصلی -->
 <script>
 document.addEventListener('DOMContentLoaded', function() {
     const phoneElement = document.querySelector('.phone-number');
@@ -210,32 +210,73 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<!-- کد صحیح تشخیص دامنه -->
+<!-- اسکریپت جدید (تشخیص دامنه با و بدون www) -->
 <script>
-const domain = window.location.hostname;
+const domain = window.location.hostname.toLowerCase();
 
 const domains = {
-    "buildingland.ir": "www.buildingland.ir",
-    "barbardigital.ir": "www.barbardigital.ir",
-    "buildcenter.ir": "www.buildcenter.ir",
-    "civaro.ir": "www.civaro.ir",
-    "civildesign.ir": "www.civildesign.ir",
-    "constructionlab.ir": "www.constructionlab.ir",
-    "contentcity.ir": "www.contentcity.ir",
-    "edulab.ir": "www.edulab.ir",
-    "homeengineer.ir": "www.homeengineer.ir",
-    "jobpool.ir": "www.jobpool.ir",
-    "modernarchitecture.ir": "www.modernarchitecture.ir",
-    "modernbuilding.ir": "www.modernbuilding.ir",
-    "outfitbox.ir": "www.outfitbox.ir",
-    "podcastcenter.ir": "www.podcastcenter.ir",
-    "proengineering.ir": "www.proengineering.ir",
-    "smartarchitecture.ir": "www.smartarchitecture.ir",
-    "smartstructure.ir": "www.smartstructure.ir",
-    "sweetlab.ir": "www.sweetlab.ir",
-    "techbuilding.ir": "www.techbuilding.ir",
-    "travelzone.ir": "www.travelzone.ir",
-    "valasaz.ir": "www.valasaz.ir"
+    "buildingland.ir": "buildingland.ir",
+    "www.buildingland.ir": "buildingland.ir",
+
+    "barbardigital.ir": "barbardigital.ir",
+    "www.barbardigital.ir": "barbardigital.ir",
+
+    "buildcenter.ir": "buildcenter.ir",
+    "www.buildcenter.ir": "buildcenter.ir",
+
+    "civaro.ir": "civaro.ir",
+    "www.civaro.ir": "civaro.ir",
+
+    "civildesign.ir": "civildesign.ir",
+    "www.civildesign.ir": "civildesign.ir",
+
+    "constructionlab.ir": "constructionlab.ir",
+    "www.constructionlab.ir": "constructionlab.ir",
+
+    "contentcity.ir": "contentcity.ir",
+    "www.contentcity.ir": "contentcity.ir",
+
+    "edulab.ir": "edulab.ir",
+    "www.edulab.ir": "edulab.ir",
+
+    "homeengineer.ir": "homeengineer.ir",
+    "www.homeengineer.ir": "homeengineer.ir",
+
+    "jobpool.ir": "jobpool.ir",
+    "www.jobpool.ir": "jobpool.ir",
+
+    "modernarchitecture.ir": "modernarchitecture.ir",
+    "www.modernarchitecture.ir": "modernarchitecture.ir",
+
+    "modernbuilding.ir": "modernbuilding.ir",
+    "www.modernbuilding.ir": "modernbuilding.ir",
+
+    "outfitbox.ir": "outfitbox.ir",
+    "www.outfitbox.ir": "outfitbox.ir",
+
+    "podcastcenter.ir": "podcastcenter.ir",
+    "www.podcastcenter.ir": "podcastcenter.ir",
+
+    "proengineering.ir": "proengineering.ir",
+    "www.proengineering.ir": "proengineering.ir",
+
+    "smartarchitecture.ir": "smartarchitecture.ir",
+    "www.smartarchitecture.ir": "smartarchitecture.ir",
+
+    "smartstructure.ir": "smartstructure.ir",
+    "www.smartstructure.ir": "smartstructure.ir",
+
+    "sweetlab.ir": "sweetlab.ir",
+    "www.sweetlab.ir": "sweetlab.ir",
+
+    "techbuilding.ir": "techbuilding.ir",
+    "www.techbuilding.ir": "techbuilding.ir",
+
+    "travelzone.ir": "travelzone.ir",
+    "www.travelzone.ir": "travelzone.ir",
+
+    "valasaz.ir": "valasaz.ir",
+    "www.valasaz.ir": "valasaz.ir"
 };
 
 document.getElementById("domainText").innerText =
