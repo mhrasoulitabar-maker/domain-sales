@@ -6,22 +6,20 @@
     <title>فروش دامنه | خرید دامنه اختصاصی</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
         body {
             font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(135deg, 
-                rgba(41, 128, 185, 0.9) 0%, 
-                rgba(52, 152, 219, 0.85) 25%, 
-                rgba(155, 89, 182, 0.8) 50%, 
-                rgba(231, 76, 60, 0.85) 75%, 
-                rgba(230, 126, 34, 0.9) 100%),
-                url('https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background: linear-gradient(135deg,
+                rgba(41,128,185,0.9) 0%,
+                rgba(52,152,219,0.85) 25%,
+                rgba(155,89,182,0.8) 50%,
+                rgba(231,76,60,0.85) 75%,
+                rgba(230,126,34,0.9) 100%
+            ),
+            url('https://images.unsplash.com/photo-1550745165-9bc0b252726f');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -33,64 +31,37 @@
             position: relative;
             overflow-x: hidden;
         }
-        
+
         body::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(0,0,0,0.5);
             z-index: -1;
         }
-        
+
         .container {
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255,255,255,0.95);
             border-radius: 25px;
             padding: 60px 50px;
             max-width: 700px;
             width: 100%;
             text-align: center;
-            box-shadow: 
-                0 25px 50px rgba(0, 0, 0, 0.25),
-                0 0 0 1px rgba(255, 255, 255, 0.1),
-                inset 0 0 50px rgba(255, 255, 255, 0.5);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
             backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
             position: relative;
-            overflow: hidden;
         }
-        
-        .container::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                transparent 30%, 
-                rgba(255, 255, 255, 0.1) 50%, 
-                transparent 70%);
-            animation: shine 8s infinite linear;
-        }
-        
-        @keyframes shine {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(0deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(360deg); }
-        }
-        
+
         h1 {
             color: #2c3e50;
             margin-bottom: 40px;
             font-size: 42px;
             font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            position: relative;
             padding-bottom: 20px;
+            position: relative;
         }
-        
+
         h1::after {
             content: '';
             position: absolute;
@@ -98,110 +69,59 @@
             left: 25%;
             width: 50%;
             height: 4px;
-            background: linear-gradient(90deg, #3498db, #9b59b6, #e74c3c);
+            background: linear-gradient(90deg,#3498db,#9b59b6,#e74c3c);
             border-radius: 2px;
         }
-        
+
         .icon-header {
             font-size: 48px;
             margin-bottom: 20px;
-            background: linear-gradient(135deg, #3498db, #9b59b6);
+            background: linear-gradient(135deg,#3498db,#9b59b6);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            animation: float 3s ease-in-out infinite;
         }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
+
         .contact-card {
-            background: linear-gradient(135deg, #ffffff, #f8f9fa);
-            border-radius: 20px;
+            background: #fff;
             padding: 40px;
+            border-radius: 20px;
             margin: 30px 0;
-            box-shadow: 
-                0 15px 35px rgba(0, 0, 0, 0.1),
-                inset 0 1px 0 rgba(255, 255, 255, 0.8);
-            border: 1px solid rgba(255, 255, 255, 0.5);
-            transition: transform 0.3s ease;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
         }
-        
-        .contact-card:hover {
-            transform: translateY(-5px);
-        }
-        
+
         .contact-icon {
             font-size: 48px;
-            margin-bottom: 20px;
             color: #3498db;
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
         }
-        
+
         .phone-number {
             font-size: 48px;
             color: #e74c3c;
             margin: 25px 0;
             direction: ltr;
             font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: pulse 2s infinite;
         }
-        
-        @keyframes pulse {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.8; }
-        }
-        
+
         .email-address {
             font-size: 28px;
             color: #2980b9;
             margin: 20px 0;
             direction: ltr;
-            font-weight: 600;
-            background: linear-gradient(135deg, #2980b9, #1c5a7a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
         }
-        
-        .info-text {
-            color: #7f8c8d;
-            font-size: 18px;
-            margin: 15px 0;
-            line-height: 1.6;
-        }
-        
+
+        .info-text { color: #7f8c8d; font-size: 18px; margin: 15px 0; }
+
         .highlight-box {
-            background: linear-gradient(135deg, #fff3cd, #ffeaa7);
-            border-radius: 15px;
+            background: #fff3cd;
             padding: 25px;
+            border-radius: 15px;
             margin: 30px 0;
             border: 2px solid #fdcb6e;
-            position: relative;
-            overflow: hidden;
         }
-        
-        .highlight-box::before {
-            content: '💡';
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 24px;
-        }
-        
-        .highlight-text {
-            color: #856404;
-            font-size: 18px;
-            font-weight: 600;
-        }
-        
+
+        .highlight-text { color: #856404; font-size: 18px; font-weight: 600; }
+
         .action-buttons {
             margin: 40px 0;
             display: flex;
@@ -209,238 +129,118 @@
             gap: 25px;
             flex-wrap: wrap;
         }
-        
+
         .btn {
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            padding: 20px 45px;
+            gap: 10px;
+            padding: 18px 35px;
             border-radius: 50px;
             text-decoration: none;
+            color: white;
             font-size: 20px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            min-width: 220px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-            position: relative;
-            overflow: hidden;
         }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
-        }
-        
-        .btn-call {
-            background: linear-gradient(135deg, #e74c3c, #c0392b);
-            color: white;
-        }
-        
-        .btn-email {
-            background: linear-gradient(135deg, #3498db, #2980b9);
-            color: white;
-        }
-        
-        .btn:hover {
-            transform: translateY(-5px) scale(1.05);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-        }
-        
-        .footer-note {
-            margin-top: 40px;
-            padding-top: 25px;
-            border-top: 2px solid #ecf0f1;
-            color: #7f8c8d;
-            font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 40px 25px;
-                margin: 20px;
-            }
-            
-            h1 {
-                font-size: 32px;
-            }
-            
-            .phone-number {
-                font-size: 36px;
-            }
-            
-            .email-address {
-                font-size: 22px;
-            }
-            
-            .btn {
-                padding: 18px 35px;
-                min-width: 100%;
-                margin: 10px 0;
-            }
-            
-            .action-buttons {
-                flex-direction: column;
-                gap: 15px;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .container {
-                padding: 30px 20px;
-            }
-            
-            h1 {
-                font-size: 28px;
-            }
-            
-            .phone-number {
-                font-size: 28px;
-            }
-            
-            .email-address {
-                font-size: 18px;
-            }
-            
-            .contact-card {
-                padding: 25px;
-            }
+
+        .btn-call { background: #e74c3c; }
+        .btn-email { background: #3498db; }
+
+        #domainText {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 30px;
+            display: block;
         }
     </style>
 </head>
+
 <body>
+
     <div class="container">
-        <div class="icon-header">
-            <i class="fas fa-globe"></i>
-        </div>
-        
+
+        <div class="icon-header"><i class="fas fa-globe"></i></div>
+
         <h1>🌐 این دامنه برای فروش است</h1>
-        
+
         <div class="contact-card">
-            <div class="contact-icon">
-                <i class="fas fa-phone-alt"></i>
-            </div>
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">برای خرید از طریق واتس آپ پیام بدهید</h2>
+            <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+            <h2>برای خرید از طریق واتس‌اپ پیام بدهید</h2>
             <div class="phone-number">09188533133</div>
-            <p class="info-text">⏰ پاسخگویی: همه روزه از ۹ صبح تا ۹ شب</p>
-            <p class="info-text">📅 حتی در ایام تعطیل</p>
+            <p class="info-text">⏰ پاسخگویی: ۹ صبح تا ۹ شب</p>
         </div>
-        
+
         <div class="contact-card">
-            <div class="contact-icon">
-                <i class="fas fa-envelope"></i>
-            </div>
-            <h2 style="color: #2c3e50; margin-bottom: 20px;">ارسال ایمیل</h2>
+            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+            <h2>ارسال ایمیل</h2>
             <div class="email-address">mehrdad.r6060@gmail.com</div>
-            <p class="info-text">✉️ در کمتر از ۲۴ ساعت پاسخ می‌دهیم</p>
-            <p class="info-text">📎 امکان ارسال پیشنهاد قیمت از طریق ایمیل</p>
+            <p class="info-text">✉️ پاسخ کمتر از ۲۴ ساعت</p>
         </div>
-        
+
         <div class="highlight-box">
-            <p class="highlight-text">
-                💡 نکته مهم: لطفاً هنگام تماس یا ارسال ایمیل، نام دامنه مورد نظر را ذکر کنید.
-            </p>
+            <p class="highlight-text">💡 لطفاً نام دامنه مورد نظر را هنگام تماس اعلام کنید.</p>
         </div>
-        
+
         <div class="action-buttons">
-            <a href="tel:+989188533133" class="btn btn-call">
-                <i class="fas fa-phone"></i>
-                تماس مستقیم
-            </a>
-            <a href="mailto:mehrdad.r6060@gmail.com" class="btn btn-email">
-                <i class="fas fa-envelope"></i>
-                ارسال ایمیل
-            </a>
+            <a href="tel:+989188533133" class="btn btn-call"><i class="fas fa-phone"></i> تماس مستقیم</a>
+            <a href="mailto:mehrdad.r6060@gmail.com" class="btn btn-email"><i class="fas fa-envelope"></i> ارسال ایمیل</a>
         </div>
-        
-        <div class="footer-note">
-            <p>🔒 این دامنه به صورت قانونی ثبت شده و آماده انتقال به نام خریدار است.</p>
-            <p>💰 قیمت: پس از تماس یا ارسال ایمیل اعلام خواهد شد.</p>
-            <p>⚡ انتقال سریع: پس از توافق، در کوتاه‌ترین زمان انجام می‌شود.</p>
-        </div>
+
+        <div id="domainText"></div>
+
     </div>
-    
-    <script>
-        // اضافه کردن انیمیشن‌های جزئی
-        document.addEventListener('DOMContentLoaded', function() {
-            // تغییر شماره و ایمیل - اینجا اطلاعات خودت را وارد کن
-            const phoneElement = document.querySelector('.phone-number');
-            const emailElement = document.querySelector('.email-address');
-            const callBtn = document.querySelector('.btn-call');
-            const emailBtn = document.querySelector('.btn-email');
-            
-            // شماره و ایمیل شما - تغییر دهید
-            const yourPhone = "09188533133";
-            const yourEmail = "mehrdad.r6060@gmail.com";
-            const cleanPhone = "989188533133"; // بدون صفر اول
-            
-            // اعمال تغییرات
-            phoneElement.textContent = yourPhone;
-            emailElement.textContent = yourEmail;
-            callBtn.href = "tel:+" + cleanPhone;
-            emailBtn.href = "mailto:" + yourEmail;
-            
-            // افکت hover برای کارت‌ها
-            const cards = document.querySelectorAll('.contact-card');
-            cards.forEach(card => {
-                card.addEventListener('mouseenter', () => {
-                    card.style.boxShadow = '0 20px 40px rgba(0, 0, 0, 0.15)';
-                });
-                card.addEventListener('mouseleave', () => {
-                    card.style.boxShadow = '0 15px 35px rgba(0, 0, 0, 0.1)';
-                });
-            });
-        });
-    </script>   
-    <!-- اینجا آخر صفحه است -->
-    
-    <span id="domainText" 
-          style="display:block; text-align:center; margin-top:30px; 
-                 font-size:22px; font-weight:bold; color:#2c3e50;">
-    </span>
 
-    <script>
-        const domain = window.location.hostname;
+<!-- اسکریپت اصلی شما -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const phoneElement = document.querySelector('.phone-number');
+    const emailElement = document.querySelector('.email-address');
+    const callBtn = document.querySelector('.btn-call');
+    const emailBtn = document.querySelector('.btn-email');
 
-        const domains = {
-            "buildingland.ir": "www.buildingland.ir",
-            "barbardigital.ir": "www.barbardigital.ir",
-            "buildcenter.ir": "www.buildcenter.ir",
-            "civaro.ir": "www.civaro.ir",
-            "civildesign.ir": "www.civildesign.ir",
-            "constructionlab.ir": "www.constructionlab.ir",
-            "contentcity.ir": "www.contentcity.ir",
-            "edulab.ir": "www.edulab.ir",
-            "homeengineer.ir": "www.homeengineer.ir",
-            "jobpool.ir": "www.jobpool.ir",
-            "modernarchitecture.ir": "www.modernarchitecture.ir",
-            "modernbuilding.ir": "www.modernbuilding.ir",
-            "outfitbox.ir": "www.outfitbox.ir",
-            "podcastcenter.ir": "www.podcastcenter.ir",
-            "proengineering.ir": "www.proengineering.ir",
-            "smartarchitecture.ir": "www.smartarchitecture.ir",
-            "smartstructure.ir": "www.smartstructure.ir",
-            "sweetlab.ir": "www.sweetlab.ir",
-            "techbuilding.ir": "www.techbuilding.ir",
-            "travelzone.ir": "www.travelzone.ir",
-            "valasaz.ir": "www.valasaz.ir"
-        };
+    const yourPhone = "09188533133";
+    const yourEmail = "mehrdad.r6060@gmail.com";
+    const cleanPhone = "989188533133";
 
-        const text = domains[domain] || domain;
-        document.getElementById("domainText").innerText = "نام دامنه: " + text;
-    </script>
-        <span id="domainText"></span>
+    phoneElement.textContent = yourPhone;
+    emailElement.textContent = yourEmail;
+
+    callBtn.href = "tel:+" + cleanPhone;
+    emailBtn.href = "mailto:" + yourEmail;
+});
+</script>
+
+<!-- کد صحیح تشخیص دامنه -->
+<script>
+const domain = window.location.hostname;
+
+const domains = {
+    "buildingland.ir": "www.buildingland.ir",
+    "barbardigital.ir": "www.barbardigital.ir",
+    "buildcenter.ir": "www.buildcenter.ir",
+    "civaro.ir": "www.civaro.ir",
+    "civildesign.ir": "www.civildesign.ir",
+    "constructionlab.ir": "www.constructionlab.ir",
+    "contentcity.ir": "www.contentcity.ir",
+    "edulab.ir": "www.edulab.ir",
+    "homeengineer.ir": "www.homeengineer.ir",
+    "jobpool.ir": "www.jobpool.ir",
+    "modernarchitecture.ir": "www.modernarchitecture.ir",
+    "modernbuilding.ir": "www.modernbuilding.ir",
+    "outfitbox.ir": "www.outfitbox.ir",
+    "podcastcenter.ir": "www.podcastcenter.ir",
+    "proengineering.ir": "www.proengineering.ir",
+    "smartarchitecture.ir": "www.smartarchitecture.ir",
+    "smartstructure.ir": "www.smartstructure.ir",
+    "sweetlab.ir": "www.sweetlab.ir",
+    "techbuilding.ir": "www.techbuilding.ir",
+    "travelzone.ir": "www.travelzone.ir",
+    "valasaz.ir": "www.valasaz.ir"
+};
+
+document.getElementById("domainText").innerText =
+    "نام دامنه: " + (domains[domain] || domain);
+</script>
 
 </body>
 </html>
