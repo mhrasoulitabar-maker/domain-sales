@@ -402,6 +402,38 @@
                 });
             });
         });
-    </script>
-</body>
+    </script>   
+   <script>
+    const domain = window.location.hostname;
+
+    const domains = {
+        "domain1.com": "www.buildingland.ir",
+        "domain2.com": "www.barbardigital.ir",
+        "domain3.com": "www.buildcenter.ir",
+        "domain4.com": "www.civaro.ir",
+       "domain5.com": "www.civildesign.ir",
+        "domain6.com": "www.constructionlab.ir",
+        "domain7.com": "www.contentcity.ir",
+        "domain8.com": "www.edulab.ir",
+        "domain9.com": "www.homeengineer.ir",
+        "domain10.com": "www.jobpool.ir",
+        "domain11.com": "www.modernarchitecture.ir",
+        "domain4.com": "www.modernbuilding.ir",
+        "domain4.com": "www.outfitbox.ir",
+        "domain4.com": "www.podcastcenter.ir",
+        "domain4.com": "www.proengineering.ir",
+        "domain4.com": "www.smartarchitecture.ir",
+        "domain4.com": "www.smartstructure.ir",
+        "domain4.com": "www.sweetlab.ir",
+        "domain4.com": "www.techbuilding.ir",
+        "domain4.com": "www.travelzone.ir",
+        "domain4.com": "www.valasaz.ir",
+
+    const text = domains[domain] || "دامنه ناشناخته";
+
+    document.getElementById("domainText").innerText = text;
+</script>
+
+</body>      
+        <span id="domainText"></span>
 </html>
